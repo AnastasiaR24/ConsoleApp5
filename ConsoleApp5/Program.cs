@@ -10,8 +10,15 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите целое число: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите целое число для проверки на простоту: ");
+            string input = Console.ReadLine();
+
+            if (!int.TryParse(input, out int number))
+            {
+                Console.WriteLine("Некорректные данные. Введите целое число!");
+                Console.ReadLine();
+                return;
+            }
 
             bool isPrime = true;
             int i = 2;
@@ -28,13 +35,13 @@ namespace ConsoleApp5
 
             if (isPrime && number > 1)
             {
-                Console.WriteLine($"{number} - простое число");
+                Console.WriteLine($"{number} - простое число.");
             }
             else
             {
-                Console.WriteLine($"{number} - не является простым числом");
+                Console.WriteLine($"{number} - не является простым числом.");
             }
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
