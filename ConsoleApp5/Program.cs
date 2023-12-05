@@ -14,6 +14,7 @@ namespace ConsoleApp5
             Console.Write("Введите целое число для проверки на простоту: ");
             string input = Console.ReadLine();
 
+            // Если пользователь ввел не число - "ошибка"
             if (!int.TryParse(input, out int number))
             {
                 Console.WriteLine("Некорректные данные. Введите целое число!");
@@ -21,6 +22,7 @@ namespace ConsoleApp5
                 return;
             }
 
+            // Проверка числа
             bool isPrime = true;
             int i = 2;
 
@@ -33,6 +35,8 @@ namespace ConsoleApp5
                 }
                 i++;
             }
+
+            // Если после выхода из цикла значение переменной осталось false, значит, число простое. Если значение переменной стало true, значит, был найден делитель (остаток от деления - 0), поэтому число не может считаться простым.
 
             if (isPrime && number > 1)
             {
