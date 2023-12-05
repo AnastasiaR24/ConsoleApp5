@@ -10,7 +10,8 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите целое число для проверки на простоту: ");
+            // Запрос у пользователя цифры
+            Console.Write("Введите целое число для проверки на простоту: ");
             string input = Console.ReadLine();
 
             if (!int.TryParse(input, out int number))
